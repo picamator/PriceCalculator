@@ -4,7 +4,7 @@ PriceCalculator
 Introduction
 ------------
 Library helps calculate products sales price components such as net, gross, vat with 
-using BCMath for all arithmetics operations. 
+using BCMath (http://www.php.net/manual/en/book.bc.php) for all arithmetics operations. 
 
 Moreover PriceCalculator offers several algorithms to build price net:
 * Fixed price over purchase price
@@ -22,4 +22,5 @@ build chain algorithms.
 
 
 ### Example
+Class diagram can be found inside `/docs/uml/` folder.
 
