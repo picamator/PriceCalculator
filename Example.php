@@ -8,7 +8,7 @@
 namespace PriceCalculator;
 use PriceCalculator\Strategy\PriceNet\PercentOver;
 
-// ProcessManager Autoload
+// PriceCalculator Autoload
 require_once ('./src/Autoload.php');
 
 // shop buy apples by 10$ from farmer
