@@ -11,8 +11,7 @@ Moreover PriceCalculator offers several algorithms to build price net:
 * Fixed percent over purchase price
 * Manually set net without any margin
 
-Additionally it is possible extend library by adding new own one or 
-build chain algorithms.
+Additionally it is possible extend library by adding own net price strategy.
 
 ### The areas of usage
 * Calculation product sales price
@@ -21,6 +20,6 @@ build chain algorithms.
 * Simply calculate VAT, gross, net    
 
 
-### Example
-Class diagram can be found inside `/docs/uml/` folder.
+### Examples
+Example can be found here: `/Example.php`
 
