@@ -14,12 +14,12 @@ class BaseTest extends \PHPUnit_Framework_TestCase
      * Assert check equals arrays
      * 
      * @param array $expected
-     * @param array $acutal
+     * @param array $actual
      */
-    protected function assertEqualArrays(array $expected, array $acutal) 
+    protected function assertEqualArrays(array $expected, array $actual) 
     {
         foreach ($expected as $key => $value) {
-            $this->assertTrue(array_key_exists($key, $acutal));
+            $this->assertTrue(array_key_exists($key, $actual));
             $this->assertEquals($value, $actual[$key]);
         }
     }

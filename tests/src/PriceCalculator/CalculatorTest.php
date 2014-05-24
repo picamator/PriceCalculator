@@ -8,38 +8,55 @@
 
 namespace PriceCalculator;
 use PriceCalculator\BaseTest;
-use PriceCalculator\Strategy\FixedPriceOver;
+use PriceCalculator\Strategy\PriceNetInterface;
+use PriceCalculator\Strategy\PriceNet\PriceOver;
+use PriceCalculator\Strategy\PriceNet\PercentOver;
+use PriceCalculator\Strategy\PriceNet\Manual;
 
-class ColculatorTest extends BaseTest
+class CalculatorTest extends BaseTest
 {
     /**
      * @dataProvider providerStrategyPercentNet
-     * @param StrategyInterface $strategy
+     * @param PriceNetInterface $strategy
      * @param float $vat_percent
      * @param float $price_purchase
      * @param array $expected_result
      */
-    public function testStrategyPriceNet(StrategyInterface $strategy, 
+    public function testStrategyPriceNet(PriceNetInterface $strategy, 
         $vat_percent, $price_purchase, array $expected_result
     ) {
         $price_calculator = new PriceCalculator($strategy, $vat_percent);
         $result = $price_calculator->setPricePurchase($price_purchase)
                     ->getPrice();
         
-        $this->assertEqualArrays($expected_result, $result);
-      
+        $this->assertEqualArrays($expected_result, $result);   
     }
     
     public function providerStrategyPercentNet()
     {
-        $options = array('price' => 5.9991);
-        $fixed_price_over = new FixedPriceOver($options);
+        // strategies
+        $price_over = new PriceOver(array('price_over' => 5.9991));
+        $percent_over = new PercentOver(array('percent_over' => 10));
+        $manual = new Manual(array('price_net' => 109.9911));
         
+        // data
         return array(
-            array($fixed_price_over, 23, 98.9921, array(
+            array($price_over, 23, 98.9921, array(
                 'price_net' => 104.9912,
-                'price_gros' => 129.1392,
-                'vat_value' => 24.1480
+                'price_gross' => 129.1391,
+                'vat_value' => 24.1479
+            )),
+            
+            array($percent_over, 23, 98.9921, array(
+                'price_net' => 108.8913,
+                'price_gross' => 133.9362,
+                'vat_value' => 25.0449
+            )),
+            
+            array($manual, 23, 98.9921, array(
+                'price_net' => 109.9911,
+                'price_gross' => 135.289,
+                'vat_value' => 25.2979
             ))
         );
     }
