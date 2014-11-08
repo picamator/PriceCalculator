@@ -1,5 +1,8 @@
 PriceCalculator
 ===============
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/77720d99-bdaf-4581-9b0f-9f1a98993304/mini.png)](https://insight.sensiolabs.com/projects/77720d99-bdaf-4581-9b0f-9f1a98993304)
+
 It helps to calculate products sales price accordingly components such as net, gross, vat with 
 hight precision.
 
