@@ -6,14 +6,13 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
-namespace PriceCalculator;
-use PriceCalculator\BaseTest;
+use PriceCalculator\PriceCalculator;
 use PriceCalculator\Strategy\PriceNetInterface;
 use PriceCalculator\Strategy\PriceNet\PriceOver;
 use PriceCalculator\Strategy\PriceNet\PercentOver;
 use PriceCalculator\Strategy\PriceNet\Manual;
 
-class CalculatorTest extends BaseTest
+class PriceCalculatorTest extends BaseTest
 {
     /**
      * @dataProvider providerStrategyPercentNet

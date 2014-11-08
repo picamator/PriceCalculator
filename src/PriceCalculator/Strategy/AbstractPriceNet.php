@@ -49,7 +49,7 @@ abstract class AbstractPriceNet implements PriceNetInterface
      * Sets options
      * 
      * @param array $options
-     * @throws Exception
+     * @throws RuntimeException
      */
     protected function setOptions(array $options) 
     {
@@ -58,7 +58,7 @@ abstract class AbstractPriceNet implements PriceNetInterface
         $options_key = array_keys($this->options);
         foreach ($options_key as $item) {
             if(empty($item)) {
-                throw Exception('Error: Required option '.$item.' was not set.');
+                throw RuntimeException('Error: Required option ' . $item . ' was not set.');
             }
         }
         

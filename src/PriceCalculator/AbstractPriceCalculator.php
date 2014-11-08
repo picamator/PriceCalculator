@@ -28,13 +28,13 @@ abstract class AbstractPriceCalculator implements PriceCalculatorInterface
     /**
      * @param PriceNetInterface $strategy
      * @param float $vat_percent
-     * @throws Exception
+     * @throws RuntimeException
      */
     public function __construct(PriceNetInterface $strategy, 
         $vat_percent = null
     ) {
         if (!extension_loaded('BCMath')) {
-            throw new Exception('Error: Extension BCMath was not loaded http://www.php.net/manual/en/book.bc.php');
+            throw new RuntimeException('Error: Extension BCMath was not loaded http://www.php.net/manual/en/book.bc.php');
         }
         
         $this->strategy = $strategy;

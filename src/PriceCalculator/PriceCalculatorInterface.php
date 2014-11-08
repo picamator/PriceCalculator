@@ -19,7 +19,7 @@ interface PriceCalculatorInterface
     /**
      * @param PriceNetInterface $strategy
      * @param float $vat_percent
-     * @throws Exception
+     * @throws RuntimeException
      */
     public function __construct(PriceNetInterface $strategy, 
         $vat_percent = null);

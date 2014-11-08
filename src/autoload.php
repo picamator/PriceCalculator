@@ -8,9 +8,9 @@
 
 namespace PriceCalculator;
 
-function Autoload($class)
+function autoload($class)
 {    
-    include_once (str_replace('\\', DIRECTORY_SEPARATOR, $class).'.php');
+    include_once (str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php');
 }
 
-spl_autoload_register(__NAMESPACE__.'\Autoload');
+spl_autoload_register(__NAMESPACE__ . '\autoload');

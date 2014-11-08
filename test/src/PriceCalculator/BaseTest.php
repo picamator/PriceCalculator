@@ -6,9 +6,7 @@
  * @license     http://opensource.org/licenses/BSD-3-Clause New BSD License
  */
 
-namespace PriceCalculator;
-
-class BaseTest extends \PHPUnit_Framework_TestCase 
+abstract class BaseTest extends PHPUnit_Framework_TestCase 
 {
     /**
      * Assert check equals arrays
